@@ -10,6 +10,26 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__bar row">
+        <div class="user_nav grid-6">
+          <span>
+            <ul class="user__info">
+              <li>
+                <%= link_to "マイページ", "/", method: :get%>
+                <%= link_to "ログアウト", "/", method: :get%>
+              </li>
+            </ul>
+          </span> 
+        </div>
+        <ul class="dropdownbtn">
+            <li class="auto-set">セット</li>
+            <li class="front-back">前後切替</li>
+            <li class="star">お気に入り</li>
+            <li class="edit">編集</li>
+        </ul>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
