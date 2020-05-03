@@ -12,24 +12,37 @@
   <body>
     <header class="header">
       <div class="header__bar row">
+        <% if user_signed_in?%>
         <div class="user_nav grid-6">
           <span>
             <ul class="user__info">
               <li>
-                <%= link_to "マイページ", "/", method: :get%>
-                <%= link_to "ログアウト", "/", method: :get%>
+                <%= link_to "#{current_user.name}", "/", method: :get%>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
               </li>
             </ul>
           </span> 
         </div>
         <ul class="dropdownbtn">
-            <li class="auto-set">セット</li>
-            <li class="front-back">前後切替</li>
+            MENU
+            <li class="change">
+              <%link_to "セット", "/", method: :get%>
+              <%link_to "前後切替", "/", method: :get%>
+              <%link_to "登録・編集", "/", method: :get%>
+            </li>
+            <%# <li class="front-back">前後切替</li>
             <li class="star">お気に入り</li>
-            <li class="edit">編集</li>
+            <li class="edit">編集</li> %>
         </ul>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          </div>
+        <% end%>
       </div>
     </header>
     <%= yield %>
+<div class="footer">Fashion Auto Setting.</div>
   </body>
 </html>
