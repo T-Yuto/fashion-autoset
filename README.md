@@ -29,25 +29,19 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 ## Asociation
-- has_many :images
-- has_many :favorites
-## imagesテーブル
+- has_many :upper-images
+- has_many :down-images
+## upper-imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|upper_image|text||
-|down_image|text||
+|image|text||
 |user_id|references|null: false, foreign_key: true|
 ## Asociation
 - belongs_to :user
-- has_many :favorites
-## favorites
+## down-imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|image|text||
 |user_id|references|null: false, foreign_key: true|
-|image_id|references|null: false, foreign_key: true|
 ## Asociation
 - belongs_to :user
-- has_many :images
-
-|Column|Type|Options|
-|------|----|-------|

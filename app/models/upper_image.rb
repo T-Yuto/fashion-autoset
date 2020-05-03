@@ -1,0 +1,2 @@
+class UpperImage < ApplicationRecord
+end
