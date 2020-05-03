@@ -1,0 +1,2 @@
+class DownImage < ApplicationRecord
+end
