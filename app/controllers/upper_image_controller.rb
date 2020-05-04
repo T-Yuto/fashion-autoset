@@ -1,14 +1,22 @@
 class UpperImageController < ApplicationController
   def index
-    @upper_images = Upper_image.includes(:user)
+    @upper_images = UpperImage.includes(:user)
+  end
+  def upper_images
+    return @upper_images
+  end
+  def upper_image
+    return @upper_image
   end
   def new
-    @upper_image = Upper_image.new(mage_params)    
+    @upper_image = UpperImage.new(image_params)  
+  end
+  def create
   end
   def show
   end
   private
   def image_params
-    params.require(:down_image).permit(:image).merge(user_id: current_id)
+    params.permit(:image).merge(user_id: current_user.id)
   end
 end
