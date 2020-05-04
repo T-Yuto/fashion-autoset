@@ -1,14 +1,22 @@
 class DownImageController < ApplicationController
   def index
-    @down_images = Down_image.includes(:user)
+    @down_images = DownImage.includes(:user)
+  end
+  def down_images
+    return @down_images
+  end
+  def down_image
+    return @down_image
   end
   def new
-    @down_image = Down_image.new(mage_params)    
+    @down_image = DownImage.new(image_params) 
+  end
+  def create
   end
   def show
   end
   private
   def image_params
-    params.require(:down_image).permit(:image).merge(user_id: current_id)
+    params.permit(:image).merge(user_id: current_id)
   end
 end
