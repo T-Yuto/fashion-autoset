@@ -2,6 +2,7 @@
   <%= form_with(model: @image, local: true) do |form| %>
     <div class="image_new upper_image_new">
       <%= form.label :upper_image, {class: 'upper_image_box'} %>
+        <%# <% if %> %>
         <%= form.file_field :upper_image %>
     </div>
     <div class="image_new down_image_new">

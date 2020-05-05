@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
 
     def index
-        @images = Image.includes(:user)
+        @images = Image.where(user_id: current_user.id).includes(:user)
         @upper_image = @images.select("id", "upper_image", "user_id")
         @down_image = @images.select("id", "down_image", "user_id")
         @related_upper_image = @upper_image.where('id>=?', rand(@upper_image.first.id..@upper_image.last.id)).where.not(upper_image: nil).first
