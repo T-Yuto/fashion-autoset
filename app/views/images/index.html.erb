@@ -1,0 +1,15 @@
+
+
+<span class="setting">
+    <% if user_signed_in?%>
+        <div class="setting_image upper-image">
+            <%= image_tag @related_upper_image.upper_image.url %>
+        </div>
+        <div class ="setting_image down-image">
+            <%= image_tag @related_down_image.down_image.url %>
+        </div>
+            
+        <p class="set-btn">CHANGE
+        </p>
+    <%end%>
+</span>

@@ -1,0 +1,15 @@
+<div class="form">
+  <%= form_with(model: @image, local: true) do |form| %>
+    <div class="image_new upper_image_new">
+      <%= form.label :upper_image, {class: 'upper_image_box'} %>
+        <%= form.file_field :upper_image %>
+    </div>
+    <div class="image_new down_image_new">
+      <%= form.label :down_image, {class: 'down_image_box'} %>
+        <%= form.file_field :down_image %>
+    </div>
+    <div class="new_submit_btn">
+      <%= form.submit "登録する" %>
+    </div>
+  <%end%>
+</div>
