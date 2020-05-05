@@ -17,23 +17,22 @@
           <span>
             <ul class="user__info">
               <li>
-                <%= link_to "#{current_user.name}", "/", method: :get%>
+                <%= link_to "#{current_user.name}", root_path%>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
               </li>
             </ul>
           </span> 
         </div>
-        <ul class="dropdownbtn">
-            MENU
+        <div class="dropdown">
+          <ul class="dropdown_btn">
             <li class="change">
-              <%link_to "セット", "/", method: :get%>
-              <%link_to "前後切替", "/", method: :get%>
-              <%link_to "登録・編集", "/", method: :get%>
-            </li>
+              <%=link_to "MENU", images_path%>
+              <%=link_to "登録", new_image_path%>
             <%# <li class="front-back">前後切替</li>
             <li class="star">お気に入り</li>
             <li class="edit">編集</li> %>
-        </ul>
+          </ul>
+        </div>
         <% else %>
           <div class="grid-6">
             <%= link_to "ログイン", new_user_session_path, class: 'post' %>
@@ -42,7 +41,11 @@
         <% end%>
       </div>
     </header>
+    <div class="body">
+    <div class="main">
     <%= yield %>
+    </div>
+    </div>
 <div class="footer">Fashion Auto Setting.</div>
   </body>
 </html>

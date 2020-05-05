@@ -3,21 +3,15 @@
   }
 .header{
     background-color:skyblue;
-    width:   100%;
-    height:  60px;
+    position:fixed;
+    height:   60px;
+    width:    100%;
+    top:         0;
     &__bar{
         justify-content: space-between;
         display: flex;
         width:   100%;
         height:  100%;
-            // h1{
-            //     margin:0 0 0 20px;
-            //     font-size: 30px;
-            //     a{
-            //         text-decoration: none;
-            //         color:black;
-            //     }
-            // }
             .grid-6{
                 a{
                     text-decoration: none;
@@ -56,65 +50,64 @@
                         }
                 }
             }
-                    .dropdownbtn{
-                        text-align:center;
-                        line-height: 60px;
-                        margin:0 20px 0 0;
-                        font-size:   30px;
-                        width:      200px;
-                        height:      100%;
-                        li{
-                            background-color: beige;
-                            border: 1px solid black;
-                            line-height:   60px;
-                            text-align:  center;
-                            white-space: nowrap;
-                            // a{
-                            //     border: 1px solid black;
-                            //     text-align:  center;
-                            //     white-space: nowrap;
-                            //     font-size:     20px;
-                            //     line-height:   60px;
-                            // }
+            .dropdown{  
+                border:1px solid black;
+                line-height: 60px;
+                text-align:center;
+                margin:0 20px 0 0;
+                font-size:   30px;
+                height:      60px;  
+                width:      200px;
+                ul{
+                    height:  100%;
+                    width:   100%;
+                    li{
+                        font-size:30px;
+                        height:   100%;
+                        display:  flex;
+                        flex-direction: column;
+                        a{
+                            text-decoration:none;
+                            white-space:  nowrap;
+                            text-align:   center;
+                            font-size:      30px;
+                            color:       white;
                         }
-                        
                     }
+                    
+                }
+            }
         }
      }
-.body{
+.main{
     background-color: beige;
+    padding:10px;
+    margin:60px 0 20px 0;
     overflow:scroll;
-    width:     100%;
-    height:calc(100vh - 80px);
-    .main{
-        margin:12px auto;
-        width:  80%;
-        height:100%;
-        .setting{
-            width:   100%;
-            height:  100%;
-            margin:  auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            .upper-wear{
-                border: 1px solid black;
-                text-align: center;
-                height:400px;
-                width: 400px;
-            }
-            .pants{
-                border: 1px solid black;
-                text-align: center;
-                height:400px;
-                width: 400px;
-            }
+    width:  100%;
+    height:100vh;
+    .setting{
+        width:   100%;
+        height:  100%;
+        margin:  auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .setting_image{
+            border: 1px solid black;
+            text-align: center;
+            height:400px;
+            width: 400px;
         }
-        .set-btn{
-            margin:0 auto;
-            font-size:50px;
-            
-        }
+        // img{
+        //     height:100%;
+        //     width: 100%;
+        // }
+    }
+    .set-btn{
+        margin:0 auto;
+        font-size:50px;
+        
     }
 }
 .footer{
@@ -126,4 +119,27 @@
     bottom:   0;
     height:20px;
     width: 100%;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    .image_new{
+        border-radius: 10px;
+        font-size: 40px;
+        margin:    auto;
+        height:   400px;
+        width:    400px;
+        label{
+            font:none;
+        }
+    }
+    .new_submit_btn{
+        margin:  auto;
+        height: 100px;
+        width:  200px;
+        input{
+            background-color: skyblue;
+            font-size:30px;
+        }
+    }
 }
