@@ -1,13 +1,13 @@
 <div class="form">
   <%= form_with(model: @image, local: true) do |form| %>
     <div class="image_new upper_image_new">
-      <%= form.label :upper_image, {class: 'upper_image_box'} %>
-        <%# <% if %> %>
-        <%= form.file_field :upper_image %>
+      <%= form.label :upper_image, {class: 'image_box upper_image_box'} %>
+        <%# <% if %>
+        <%= form.file_field :upper_image, {class: "select_imagefile"} %>
     </div>
     <div class="image_new down_image_new">
-      <%= form.label :down_image, {class: 'down_image_box'} %>
-        <%= form.file_field :down_image %>
+      <%= form.label :down_image, {class: 'image_box down_image_box'} %>
+        <%= form.file_field :down_image, {class: "select_imagefile"}  %>
     </div>
     <div class="new_submit_btn">
       <%= form.submit "登録する" %>

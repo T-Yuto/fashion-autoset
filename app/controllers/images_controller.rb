@@ -2,10 +2,10 @@ class ImagesController < ApplicationController
 
     def index
         @images = Image.where(user_id: current_user.id).includes(:user)
-        @upper_image = @images.select("id", "upper_image", "user_id")
-        @down_image = @images.select("id", "down_image", "user_id")
-        @related_upper_image = @upper_image.where.not(upper_image: nil).where('id>=?', rand(@upper_image.first.id..@upper_image.last.id)).first
-        @related_down_image = @down_image.where.not(down_image: nil).where('id>=?', rand(@down_image.first.id..@down_image.last.id)).first
+        @upper_image = @images.select("id", "upper_image", "user_id").where.not(upper_image: nil)
+        @down_image = @images.select("id", "down_image", "user_id").where.not(down_image: nil)
+        @related_upper_image = @upper_image.where('id>=?', rand(@upper_image.first.id..@upper_image.last.id)).first
+        @related_down_image = @down_image.where('id>=?', rand(@down_image.first.id..@down_image.last.id)).first
     end
     def new
         @image = Image.new
