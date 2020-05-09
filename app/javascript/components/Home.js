@@ -1,3 +1,0 @@
--Images
--NewOfContents
-  -Preview
