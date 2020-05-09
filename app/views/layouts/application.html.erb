@@ -5,9 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -26,12 +25,12 @@
         </div>
         <div class="dropdown">
           <ul class="dropdown_btn">
-            <li class="change">
-              <%=link_to "MENU", images_path%>
-              <%=link_to "登録", new_image_path%>
-            <%# <li class="front-back">前後切替</li>
-            <li class="star">お気に入り</li>
-            <li class="edit">編集</li> %>
+            <button class="dropdown_btn menu_btn">MENU</button>
+            <li class="menulist">
+              <button class="menu mypage_btn"><a href="/images">MyPage</a></button>
+              <button class="menu new_btn"><a href="/images/new">登録</a></button>
+              <button class="menu edit_btn"><a href="/images/edit">編集</a></button>
+            </li>
           </ul>
         </div>
         <% else %>
