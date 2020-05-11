@@ -1,1 +1,0 @@
-json.image  @image.image_url

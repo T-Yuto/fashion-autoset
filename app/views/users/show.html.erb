@@ -1,0 +1,32 @@
+<div class="user_images user_upper_images">
+  <h2 class="user_images_headline" id="user_upper_images_headline">
+    SHIRT
+  </h2>
+  <ul class="user_image_list user_upper_image_list">
+    <% @upper_images.each do |upper_image|%>
+      <li class="user_image user_upper_image">
+        <%= image_tag(upper_image.upper_image_url, width: 100) %>
+        <div class="image_btns">
+        <%= link_to '編集' %>  
+        <%= link_to '削除'%>
+        </div>
+      </li>
+    <%end%>
+  </ul>
+</div>
+
+<div class="user_images user_down_images">
+  <h2 class="user_images_headline" id="user_down_images_headline">
+    PANTS
+  </h2>
+  <ul class="user_image_list user_down_image_list">
+    <% @down_images.each do |down_image|%>
+      <li class="user_image user_down_image">
+        <%= image_tag(down_image.down_image_url, width: 100)%>
+        <div class="image_btns">
+          <%= link_to '詳細', image_path(down_image.id) %>
+        </div>
+      </li>
+    <%end%>
+  </ul>
+</div>
