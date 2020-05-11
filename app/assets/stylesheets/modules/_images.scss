@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
   }
+body{
+    min-height:100vh;
+}
 .header{
     background-color:skyblue;
     position:fixed;
@@ -12,7 +15,7 @@
         display: flex;
         height:  100%;
         width:   100%;
-        .user_nav{
+        .grid-6{
             .user__info{
                 height: 60px;
                 li{
@@ -71,6 +74,7 @@
                     cursor: pointer;
                 }
                 .menulist{
+                    
                     .menu{
                         background-color: skyblue;
                         border:   1px solid white;
@@ -153,20 +157,14 @@
             width:    400px;
             &:hover{
                 background-color: darkorange;
-                opacity:   0.5;
                 transition: 1s;
             }
             .image_box{
-                display:  none;
                 height:   100%;
                 width:    100%;
-                position: relative;
             }
             .select_imagefile{
-                display:  block;
-                font-size: 20px;
-                height:    100%;
-                width:    400px;
+                display: none;
             }
         }
         .new_submit_btn{
@@ -185,7 +183,59 @@
             }
         }
     }
+
+    .user_images{
+        border-radius: 10px;
+        border:   1px solid;
+        overflow:    scroll;
+        margin:  auto;
+        padding: 0 60px 100px 60px;
+        height: calc(100vh - 50%);
+        width:    80%;
+        h2{
+            background-color: skyblue;
+            text-align: center;
+            line-height:  40px;
+            font-size: 30px;
+            margin:  0 auto;
+            color:  white;
+            height:    40px;
+            width:    200px;
+        }
+        .user_image_list{
+            display:   flex;
+            flex-wrap: wrap;
+            height:calc(100% - 40px);
+            .user_image{
+                margin: 5px;
+                padding:15px;
+                &:hover{
+                    transform-origin:top;
+                    transform: scale(3);
+                } 
+                // img{
+                //     position: relative;
+                // }
+                .image_btns{
+                    margin: 0 auto;
+                    display: flex;
+                    // position: absolute;
+                    a{
+                        margin:0 10px 0 0;
+                        display: block;
+                        top:5px; 
+                        left:0px;
+                        font-size: 10px;
+                        text-decoration: none;
+                    }
+                }
+                   
+            }
+        }
+    }
+
 }
+
 .footer{
     background-color:black;
     text-align:  center;

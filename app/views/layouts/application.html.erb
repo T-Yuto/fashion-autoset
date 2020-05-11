@@ -13,30 +13,36 @@
     <header class="header">
       <div class="header__bar row">
         <% if user_signed_in?%>
-        <div class="user_nav grid-6">
-          <span>
-            <ul class="user__info">
-              <li>
-                <%= link_to "#{current_user.name}", root_path%>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+          <div class="user_nav grid-6">
+            <span>
+              <ul class="user__info">
+                <li>
+                  <%= link_to "#{current_user.name}", root_path%>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+                </li>
+              </ul>
+            </span> 
+          </div>
+          <div class="dropdown">
+            <ul class="dropdown_btn">
+              <button class="dropdown_btn menu_btn">MENU</button>
+              <li class="menulist">
+                <button class="menu mypage_btn"><a href="/users/<%= current_user.id %>">マイページ</a></button>
+                <button class="menu new_btn"><a href="/images/new">登録</a></button>
+                <button class="menu edit_btn"><a href="/">登録一覧</a></button>
               </li>
             </ul>
-          </span> 
-        </div>
-        <div class="dropdown">
-          <ul class="dropdown_btn">
-            <button class="dropdown_btn menu_btn">MENU</button>
-            <li class="menulist">
-              <button class="menu mypage_btn"><a href="/images">MyPage</a></button>
-              <button class="menu new_btn"><a href="/images/new">登録</a></button>
-              <button class="menu edit_btn"><a href="/images/edit">編集</a></button>
-            </li>
-          </ul>
-        </div>
+          </div>
         <% else %>
           <div class="grid-6">
-            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+            <span>
+              <ul class="user__info">
+                <li>
+                  <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+                  <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+                </li>
+              </ul>
+            </span> 
           </div>
         <% end%>
       </div>
