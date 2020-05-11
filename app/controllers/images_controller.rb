@@ -16,8 +16,8 @@ class ImagesController < ApplicationController
   end
 
   def show
-    @image = Image.find(params[:id])
     search_user_images
+    @image = Image.find(params[:id])
     # @image.update(image_params)
   end
 
