@@ -3,7 +3,11 @@
         <h2>SHIRTを選択</h2>
         <%= form.file_field :upper_image, {class: "select_imagefile"}%>
       </label>
-        <%= image_tag(@image.upper_image_url, id: "upper_image")%>
+        <% if @image.upper_image.present? %>
+          <%= image_tag(@image.upper_image_url, id: "upper_image") %>
+        <% else %>
+          <div id="upper_image">SHIRT</div>
+        <% end %>
     </div>
 
     <div class="image_new down_image_new">
@@ -11,5 +15,10 @@
         <h2>PANTSを選択</h2>
         <%= form.file_field :down_image, {class: "select_imagefile"}  %>
       </label>
-        <%= image_tag(@image.down_image_url, id: "down_image")%>
+      <% if @image.down_image.present? %>
+        <%= image_tag(@image.down_image_url, id: "down_image") %>
+        <% else %>
+          <div id="down_image">PANTS</div>
+        <% end %>
+
     </div>
