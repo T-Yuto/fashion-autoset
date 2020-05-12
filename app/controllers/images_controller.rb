@@ -1,12 +1,7 @@
 class ImagesController < ApplicationController
-  # before_action move_to_index, expect: [:index, ]
   def index
     if user_signed_in?
-      @images = Image.where(user_id: current_user.id).includes(:user)
-      @upper_images = @images.select("id", "upper_image", "user_id").where.not(upper_image: nil)
-      @down_images = @images.select("id", "down_image", "user_id").where.not(down_image: nil)
-      @related_upper_image = @upper_images.where("id>=?", rand(@upper_images.first.id..@upper_images.last.id)).first
-      @related_down_image = @down_images.where("id>=?", rand(@down_images.first.id..@down_images.last.id)).first
+      search_user_images
     end
   end
 
@@ -32,5 +27,24 @@ class ImagesController < ApplicationController
 
   def image_params
     params.require(:image).permit(:upper_image, :down_image).merge(user_id: current_user.id)
+  end
+
+  def search_user_images
+    @images = Image.where(user_id: current_user.id).includes(:user)
+    if @images.present?
+      @upper_images = @images.select("id", "upper_image", "user_id").where.not(upper_image: nil)
+      @down_images = @images.select("id", "down_image", "user_id").where.not(down_image: nil)
+      if @upper_images.present? && @down_images.present?
+      @related_upper_image = @upper_images.where("id>=?", rand(@upper_images.first.id..@upper_images.last.id)).first
+      @related_down_image = @down_images.where("id>=?", rand(@down_images.first.id..@down_images.last.id)).first
+      else
+        move_to_new
+      end
+    else
+      move_to_new
+    end
+  end
+  def move_to_new
+    redirect_to action: :new
   end
 end
