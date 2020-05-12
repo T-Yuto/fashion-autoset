@@ -1,5 +1,5 @@
 <span class="setting">
-  <% if user_signed_in?%>
+  <% if user_signed_in? %>
     <div class="setting_image upper-image">
       <%= image_tag @related_upper_image.upper_image.url %>
     </div>
@@ -9,5 +9,7 @@
     <div class="set_btn">
       <button type="button" value="change_btn" class="change_btn"><a href="/">CHANGE</a></button>
     </div>
-  <%end%>
+  <%else%>
+    <>
+  <% end %>
 </span>

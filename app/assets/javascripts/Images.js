@@ -62,7 +62,7 @@ $(function () {
                 $(".down_image_new").append($("<img>").attr({
                     src: down.target.result,
                     width: "400px",
-                    height: "450px",
+                    height: "500px",
                     id: "down_image",
                     title: file.name
                 }));

@@ -17,7 +17,7 @@
             <span>
               <ul class="user__info">
                 <li>
-                  <%= link_to "#{current_user.name}", root_path%>
+                  <%= link_to "ユーザー名： #{current_user.name}", root_path%>
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
                 </li>
               </ul>
