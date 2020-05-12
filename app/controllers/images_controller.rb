@@ -1,9 +1,8 @@
 class ImagesController < ApplicationController
   def index
-    @images = Image.includes(:user)
-    search_user_images
-    @related_upper_image = @upper_images.where("id>=?", rand(@upper_images.first.id..@upper_images.last.id)).first
-    @related_down_image = @down_images.where("id>=?", rand(@down_images.first.id..@down_images.last.id)).first
+    if user_signed_in?
+      search_user_images
+    end
   end
 
   def new
@@ -15,10 +14,13 @@ class ImagesController < ApplicationController
     redirect_to new_image_path
   end
 
-  def show
-    search_user_images
+  def edit
     @image = Image.find(params[:id])
-    # @image.update(image_params)
+  end
+
+  def update
+    image = Image.find(params[:id])
+    tweet.update(tweet_params)
   end
 
   private
@@ -29,7 +31,20 @@ class ImagesController < ApplicationController
 
   def search_user_images
     @images = Image.where(user_id: current_user.id).includes(:user)
-    @upper_images = @images.select("id", "upper_image", "user_id").where.not(upper_image: nil)
-    @down_images = @images.select("id", "down_image", "user_id").where.not(down_image: nil)
+    if @images.present?
+      @upper_images = @images.select("id", "upper_image", "user_id").where.not(upper_image: nil)
+      @down_images = @images.select("id", "down_image", "user_id").where.not(down_image: nil)
+      if @upper_images.present? && @down_images.present?
+      @related_upper_image = @upper_images.where("id>=?", rand(@upper_images.first.id..@upper_images.last.id)).first
+      @related_down_image = @down_images.where("id>=?", rand(@down_images.first.id..@down_images.last.id)).first
+      else
+        move_to_new
+      end
+    else
+      move_to_new
+    end
+  end
+  def move_to_new
+    redirect_to action: :new
   end
 end
