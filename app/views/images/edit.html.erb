@@ -1,8 +1,11 @@
 <div class="form">
   <%= form_with(model: @image, local: true) do |form| %>
     <%= render partial:"form", locals:{form:form} %>
-    <div class="new_submit_btn">
+    <div class="submit_btn new_submit_btn">
       <%= form.submit "更新する" %>
     </div>
   <% end %>
+  <p class="submit_btn delete_submit_btn">
+    <%= link_to "削除する", image_path(@image.id), method: :delete %>
+  </p>
 </div> 

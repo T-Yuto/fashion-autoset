@@ -20,7 +20,18 @@ class ImagesController < ApplicationController
 
   def update
     image = Image.find(params[:id])
-    tweet.update(tweet_params)
+    if params[:image].present?
+      image.update(image_params)
+      redirect_to user_path(current_user.id)
+    else
+       destroy
+    end
+  end
+
+  def destroy
+    image = Image.find(params[:id])
+    image.delete
+    redirect_to user_path(current_user.id)
   end
 
   private
@@ -35,8 +46,8 @@ class ImagesController < ApplicationController
       @upper_images = @images.select("id", "upper_image", "user_id").where.not(upper_image: nil)
       @down_images = @images.select("id", "down_image", "user_id").where.not(down_image: nil)
       if @upper_images.present? && @down_images.present?
-      @related_upper_image = @upper_images.where("id>=?", rand(@upper_images.first.id..@upper_images.last.id)).first
-      @related_down_image = @down_images.where("id>=?", rand(@down_images.first.id..@down_images.last.id)).first
+        @related_upper_image = @upper_images.where("id>=?", rand(@upper_images.first.id..@upper_images.last.id)).first
+        @related_down_image = @down_images.where("id>=?", rand(@down_images.first.id..@down_images.last.id)).first
       else
         move_to_new
       end
@@ -44,6 +55,7 @@ class ImagesController < ApplicationController
       move_to_new
     end
   end
+
   def move_to_new
     redirect_to action: :new
   end

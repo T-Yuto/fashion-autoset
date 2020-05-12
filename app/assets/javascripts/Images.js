@@ -17,7 +17,7 @@ $(function () {
     }
     //初めにタブを隠す
     // window.onload = function(){
-        menuListHide("ul.dropdown_btn");
+    menuListHide("ul.dropdown_btn");
     // };
 
     //form_preview
@@ -70,6 +70,17 @@ $(function () {
         })(file);
 
         reader.readAsDataURL(file);
+    });
+
+    $(".upper_image_delete_btn").click(function () {
+        let elem = $('<div class="image_preview" id="upper_image">左のボタンから<br>ファイルを選択<br>してください<br></div>');
+        $("#upper_image").remove();
+        $(".upper_image_new").append(elem);
+    });
+    $(".down_image_delete_btn").click(function () {
+        let elem = $('<div class="image_preview" id="down_image">左のボタンから<br>ファイルを選択<br>してください<br></div>');
+        $("#down_image").remove();
+        $(".down_image_new").append(elem);
     });
 
 });

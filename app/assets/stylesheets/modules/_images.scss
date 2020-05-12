@@ -129,6 +129,9 @@ body{
     .form{
         display: flex;
         flex-direction: column;
+        form{
+            margin: 0 0 10px 0;
+        }
         .image_new{
             border-radius: 10px;
             margin:    auto;
@@ -138,40 +141,67 @@ body{
             h2{
                 border: 2px solid lightslategray;
                 border-radius: 5px;
-                font-size: 30px;
+                margin: 0 0 15px 0;
                 text-align: center;
-                width:120px;
-                cursor:pointer;
-                margin:auto;
+                cursor: pointer;
+                padding:    5px;
+                font-size: 30px;
+                width:    120px;
                 &:hover{
                     background-color: darkorange;
                     transition: 1s;
                 }
             }
             .image_preview{
-                height: 100%;
-                width:  100%;
                 border: 1px solid lightblue;
                 border-radius: 5px;
+                font-size: 30px;
+                height: 100%;
+                width:  100%;
             }
             .select_imagefile{
                 display: none;
             }
+            img #upper_image{
+                width:  "400px";
+                height: "400px";
+            }
+            img #down_image{
+                width:  "400px";
+                height: "450px";
+            }
         }
-        .new_submit_btn{
-            margin:  auto;
-            height: 100px;
-            width:  200px;
+        .submit_btn{
+            margin: auto;
+            width: 150px;
             input{
+                border: 0.8px solid lightslategray;
                 background-color: transparent;
-                border-radius: 20px;
+                border-radius:   20px;
                 font-size:  30px;
                 height:     50px;
                 width:     150px;
                 &:hover{
-                    cursor: pointer;
-                    color:red;
+                    cursor:   pointer;
+                    color:lightblue;
                 }
+            }
+        }
+    }
+    .delete_submit_btn{
+        border: 0.8px solid lightslategray;
+        border-radius:   20px;
+        text-align: center;
+        height:     50px;
+        width:     150px;
+        a{
+            background-color: transparent;
+            text-decoration: none;
+            margin:20px 0 0 0 ;
+            color:   black;
+            font-size:  30px;
+            &:hover{
+                color: red;
             }
         }
     }
@@ -182,7 +212,7 @@ body{
         overflow:    scroll;
         margin:  auto;
         padding: 0 60px 100px 60px;
-        height: calc(100vh - 50%);
+        height:  calc(100vh - 50%);
         width:    80%;
         h2{
             background-color: skyblue;
@@ -197,22 +227,22 @@ body{
         .user_image_list{
             display:   flex;
             flex-wrap: wrap;
-            height:calc(100% - 40px);
+            height: calc(100% - 40px);
             .user_image{
-                margin: 5px;
-                padding:15px;
+                margin:  5px;
+                padding: 15px;
                 &:hover{
                     transform-origin:top;
-                    transform: scale(3);
+                    transform:  scale(3);
                 } 
                 .image_btn{
                     margin: 0 auto;
                     display:  flex;
                     width:    35px;
                     a{
+                        text-decoration: none;
                         text-align: center;
                         font-size: 10px;
-                        text-decoration: none;
                     }
                 }
                    
