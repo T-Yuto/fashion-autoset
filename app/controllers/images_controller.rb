@@ -15,10 +15,13 @@ class ImagesController < ApplicationController
     redirect_to new_image_path
   end
 
-  def show
-    search_user_images
+  def edit
     @image = Image.find(params[:id])
-    # @image.update(image_params)
+  end
+  
+  def update
+    image = Image.find(params[:id])
+    tweet.update(tweet_params)
   end
 
   private

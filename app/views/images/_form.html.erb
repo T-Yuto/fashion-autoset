@@ -1,0 +1,15 @@
+    <div class="image_new upper_image_new">
+      <label class: image_box upper_image_box>
+        <h2>SHIRTを選択</h2>
+        <%= form.file_field :upper_image, {class: "select_imagefile"}%>
+      </label>
+        <%= image_tag(@image.upper_image_url, id: "upper_image")%>
+    </div>
+
+    <div class="image_new down_image_new">
+      <label class: image_box down_image_box>
+        <h2>PANTSを選択</h2>
+        <%= form.file_field :down_image, {class: "select_imagefile"}  %>
+      </label>
+        <%= image_tag(@image.down_image_url, id: "down_image")%>
+    </div>
