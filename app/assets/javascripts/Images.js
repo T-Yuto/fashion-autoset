@@ -1,5 +1,13 @@
 $(function () {
 
+    //メニュータブの動作方法
+    let menuListHide = function () {
+        $("ul.dropdown_btn").children(".menulist").hide();
+    }
+    let menuListShow = function () {
+        $("ul.dropdown_btn").children(".menulist").show();
+    }
+    
     //メニュータブの動作
     $('.dropdown ul.dropdown_btn').hover(
         function () {
@@ -8,13 +16,7 @@ $(function () {
             menuListHide();
         }
     );
-    //メニュータブの動作方法
-    let menuListHide = function () {
-        $("ul.dropdown_btn").children(".menulist").hide();
-    }
-    let menuListShow = function () {
-        $("ul.dropdown_btn").children(".menulist").show();
-    }
+    
     //初めにタブを隠す
     // window.onload = function(){
     menuListHide("ul.dropdown_btn");
