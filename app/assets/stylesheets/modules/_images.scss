@@ -86,14 +86,18 @@ body{
     overflow: scroll;
     height:100vh;
     width:  100%;
-
     .setting{
         height:  100%;
         width:   100%;
         margin:  auto;
-        display: flex;
-        flex-direction: column;
-        align-items:    center;
+        overflow:   scroll;
+        display:      flex;
+        align-items:center;
+        .vertical_index{
+            margin:  auto;
+            display: flex;
+            flex-direction: column;            
+        }
         .upper-image img{
             height: 350px;
             width:  400px;
@@ -107,28 +111,13 @@ body{
             text-align: center;
         }
     }
-    .set_btn{
-        margin:  0 auto;
-        font-size: 50px;
-        .change_btn{
-            background-color: transparent;
-            border-radius: 10px;
-            font-size: 30px;
-            height:    60px;
-            width:     100%;
-            &:hover{
-                background-color: gray;
-            }
-            a{
-                text-decoration: none;
-                color:black;
-            }
-        }
-    }
-
+  
     .form{
+        overflow: scroll;
+        .vertical_form{
         display: flex;
         flex-direction: column;
+        }
         form{
             margin: 0 0 10px 0;
         }
@@ -172,22 +161,7 @@ body{
                 width:  400px;
             }
         }
-        .submit_btn{
-            margin: auto;
-            width: 150px;
-            input{
-                border: 0.8px solid lightslategray;
-                background-color: transparent;
-                border-radius:   20px;
-                font-size:  30px;
-                height:     50px;
-                width:     150px;
-                &:hover{
-                    cursor:   pointer;
-                    color:lightblue;
-                }
-            }
-        }
+        
     }
     .delete_submit_btn{
         border: 0.8px solid lightslategray;
@@ -266,4 +240,98 @@ body{
     bottom:   0;
     height:30px;
     width: 100%;
+}
+
+@media screen and (min-width: 981px){
+    #set_btn_right{
+        position: absolute;
+        bottom:20vh;
+        right:50px;
+        .change_btn{
+            background-color: transparent;
+            border-radius: 10px;
+            font-size: 30px;
+            height:    60px;
+            width:     100%;
+            &:hover{
+                background-color: gray;
+            }
+            a{
+                text-decoration: none;
+                color:black;
+            }
+        }
+    }
+    #set_btn_bottom{
+        display: none;
+    }
+    .submit_btn_right{
+        position: absolute;
+        display: block;
+        bottom: 20vh;
+        right: 20px;
+        input{
+            border: 0.8px solid lightslategray;
+            background-color: transparent;
+            border-radius:   20px;
+            font-size:  30px;
+            height:     50px;
+            width:     150px;
+            &:hover{
+                cursor:   pointer;
+                color:lightblue;
+            }
+        }
+    }
+    .submit_btn_bottom{
+        display: none;
+    }
+    #delete_submit_btn_right{
+        position: absolute;
+        bottom:10vh;
+        right:20px;
+    }
+}
+
+@media screen and (max-width: 980px){
+    #set_btn_right{
+        display: none;
+    }
+    #set_btn_bottom{
+        margin:  0 auto;
+        font-size: 50px;
+        .change_btn{
+            background-color: transparent;
+            border-radius: 10px;
+            font-size: 30px;
+            height:    60px;
+            width:     100%;
+            &:hover{
+                background-color: gray;
+            }
+            a{
+                text-decoration: none;
+                color:black;
+            }
+        }
+    }
+    .submit_btn_bottom{
+        margin: auto;
+        width: 150px;
+        input{
+            border: 0.8px solid lightslategray;
+            background-color: transparent;
+            border-radius:   20px;
+            font-size:  30px;
+            height:     50px;
+            width:     150px;
+            &:hover{
+                cursor:   pointer;
+                color:lightblue;
+            }
+        }
+    }
+    .submit_btn_right{
+        display: none;
+    }
 }

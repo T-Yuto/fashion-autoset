@@ -1,8 +1,13 @@
 <div class="form">
 
   <%= form_with(model: @image, local: true) do |form| %>
-    <%= render partial:"form", locals:{form:form} %>
-    <div class="submit_btn new_submit_btn">
+    <div class="vertical_form">
+      <%= render partial:"form", locals:{form:form} %>
+      <div class="submit_btn_bottom new_submit_btn">
+        <%= form.submit "登録する" %>
+      </div>
+    </div>
+    <div class="submit_btn_right new_submit_btn">
       <%= form.submit "登録する" %>
     </div>
   <%end%>
