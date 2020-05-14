@@ -9,7 +9,8 @@
         </label>
       </div>
         <% if @image.upper_image.present? %>
-          <%= image_tag(@image.upper_image_url, id: "upper_image") %>
+          <%= image_tag(@image.upper_image_url, data: @image.upper_image, id: "upper_image") %>
+          <%# <img src=data:image/jpeg; base64, @image.upper_image id="upper_image"> %>
         <% else %>
           <div class="image_preview" id="upper_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>
         <% end %>
