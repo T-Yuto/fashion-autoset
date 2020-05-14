@@ -9,8 +9,8 @@
         </label>
       </div>
         <% if @image.upper_image.present? %>
-          <%= image_tag(@image.upper_image_url, data: @image.upper_image, id: "upper_image") %>
-          <%# <img src=data:image/jpeg; base64, @image.upper_image id="upper_image"> %>
+          <%= image_tag(@image.upper_image_url, id: "upper_image")%>
+          <%# <img class="upper_image_new" id="upper_image" data-src="{@image.upper_image_url}"> %>
         <% else %>
           <div class="image_preview" id="upper_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>
         <% end %>
@@ -31,5 +31,4 @@
       <% else %>
         <div class="image_preview"  id="down_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>
       <% end %>
-
     </div>

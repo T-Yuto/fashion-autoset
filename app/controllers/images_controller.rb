@@ -8,14 +8,19 @@ class ImagesController < ApplicationController
   def new
     @image = Image.new
   end
-
+  
   def create
-    @image = Image.create(image_params)
-    redirect_to new_image_path
+    if params[:image].present?
+      Image.create(image_params)
+      move_to_new
+    else
+      move_to_new
+    end
   end
 
   def edit
     @image = Image.find(params[:id])
+
   end
 
   def update
@@ -57,6 +62,6 @@ class ImagesController < ApplicationController
   end
 
   def move_to_new
-    redirect_to action: :new
+    redirect_to new_image_path
   end
 end

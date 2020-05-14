@@ -1,7 +1,7 @@
-<div class="form">
+<div class="form" onload="init(@image)">
   <%= form_with(model: @image, local: true) do |form| %>
     <div class="vertical_form">
-      <%= render partial:"form", locals:{form:form} %>
+      <%= render partial: "form", locals: {form: form} %>
       <div class="submit_btn_bottom new_submit_btn">
         <%= form.submit "更新する" %>
       </div>
