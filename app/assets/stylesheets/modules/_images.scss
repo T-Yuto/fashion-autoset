@@ -268,7 +268,7 @@ body{
     .submit_btn_right{
         position: absolute;
         display: block;
-        bottom: 20vh;
+        bottom: 200px;
         right: 20px;
         input{
             border: 0.8px solid lightslategray;
@@ -288,7 +288,7 @@ body{
     }
     #delete_submit_btn_right{
         position: absolute;
-        bottom:10vh;
+        bottom:150px;
         right:20px;
     }
 }
@@ -332,6 +332,9 @@ body{
         }
     }
     .submit_btn_right{
+        display: none;
+    }
+    #delete_submit_btn_right{
         display: none;
     }
 }

@@ -1,14 +1,20 @@
 <div class="form">
   <%= form_with(model: @image, local: true) do |form| %>
     <div class="vertical_form">
-      <%= render partial:"form", locals:{form:form} %>
+    
+      <%= cache @image do %>
+        <%= render partial: "form", locals: {form: form} %>
+      <% end %>
+
       <div class="submit_btn_bottom new_submit_btn">
         <%= form.submit "更新する" %>
       </div>
       <p class="submit_btn_bottom delete_submit_btn">
         <%= link_to "削除する", image_path(@image.id), method: :delete %>
       </p>
+
     </div>
+
     <div class="submit_btn_right new_submit_btn">
       <%= form.submit "更新する" %>
     </div>

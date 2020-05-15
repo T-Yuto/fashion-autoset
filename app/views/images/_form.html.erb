@@ -1,35 +1,32 @@
-    <div class="image_new upper_image_new">
-      <div class="btns">
-        <label class: image_box upper_image_box>
-          <h2>SHIRTを選択</h2>
-          <%= form.file_field :upper_image, {class: "select_imagefile"}%>
-        </label>
-        <label>
-          <h2 class="delete_btn upper_image_delete_btn">選択を解除</h2>
-        </label>
-      </div>
-        <% if @image.upper_image.present? %>
-          <%= image_tag(@image.upper_image_url, data: @image.upper_image, id: "upper_image") %>
-          <%# <img src=data:image/jpeg; base64, @image.upper_image id="upper_image"> %>
-        <% else %>
-          <div class="image_preview" id="upper_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>
-        <% end %>
-    </div>
+<%= form.hidden_field :image_cache %>
 
-    <div class="image_new down_image_new">
-      <div class="btns">
-        <label class: image_box down_image_box>
-          <h2>PANTSを選択</h2>
-          <%= form.file_field :down_image, {class: "select_imagefile"}  %>
-        </label>
-        <label>
-          <h2 class="delete_btn down_image_delete_btn">選択を解除</h2>
-        </label>
-      </div>
-      <% if @image.down_image.present? %>
-        <%= image_tag(@image.down_image_url, id: "down_image") %>
-      <% else %>
-        <div class="image_preview"  id="down_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>
-      <% end %>
+<div class="image_new upper_image_new">
+  <div class="btns">
+    <label class: image_box upper_image_box>
+      <h2>SHIRTを選択</h2>
+      <%= form.file_field :upper_image, {class: "select_imagefile", id: "select_upper_image"}%>
+    </label>
+  </div>
+  <% if @image.upper_image.present? %>
+    <%= image_tag(@image.upper_image_url, id: "upper_image") %>
+  <% else %>
+    <div class="image_preview" id="upper_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>
+  <% end %>
+</div>
 
-    </div>
+<div class="image_new down_image_new">
+  <div class="btns">
+    <label class: image_box down_image_box>
+      <h2>PANTSを選択</h2>
+      <%= form.file_field :down_image, {class: "select_imagefile", id: "select_down_image"}  %>
+    </label>
+    <label>
+      <h2 class="delete_btn">選択を解除</h2>
+    </label>
+  </div>
+  <% if @image.down_image.present? %>
+    <%= image_tag(@image.down_image_url, id: "down_image") %>
+  <% else %>
+    <div class="image_preview"  id="down_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>
+  <% end %>
+</div>
