@@ -8,7 +8,7 @@ class ImagesController < ApplicationController
   def new
     @image = Image.new
   end
-  
+
   def create
     if params[:image].present?
       Image.create(image_params)
@@ -20,7 +20,6 @@ class ImagesController < ApplicationController
 
   def edit
     @image = Image.find(params[:id])
-
   end
 
   def update
@@ -29,7 +28,7 @@ class ImagesController < ApplicationController
       image.update(image_params)
       redirect_to user_path(current_user.id)
     else
-       destroy
+      destroy
     end
   end
 

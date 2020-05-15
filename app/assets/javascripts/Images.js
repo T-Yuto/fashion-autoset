@@ -1,14 +1,12 @@
 $(function () {
 
-    //メニュータブの動作方法
+    //メニュータブ
     let menuListHide = function () {
         $("ul.dropdown_btn").children(".menulist").hide();
     }
     let menuListShow = function () {
         $("ul.dropdown_btn").children(".menulist").show();
     }
-    
-    //メニュータブの動作
     $('.dropdown ul.dropdown_btn').hover(
         function () {
             menuListShow();
@@ -16,11 +14,8 @@ $(function () {
             menuListHide();
         }
     );
-    
-    //初めにタブを隠す
-    // window.onload = function(){
     menuListHide("ul.dropdown_btn");
-    // };
+
 
     //form_preview
     $(".upper_image_new").change(function (upper) {
@@ -74,15 +69,17 @@ $(function () {
         reader.readAsDataURL(file);
     });
 
-    $(".upper_image_delete_btn").click(function () {
-        let elem = $('<div class="image_preview" id="upper_image">左のボタンから<br>ファイルを選択<br>してください<br></div>');
-        $("#upper_image").remove();
-        $(".upper_image_new").append(elem);
-    });
-    $(".down_image_delete_btn").click(function () {
-        let elem = $('<div class="image_preview" id="down_image">左のボタンから<br>ファイルを選択<br>してください<br></div>');
-        $("#down_image").remove();
-        $(".down_image_new").append(elem);
-    });
+    let upper_elem = $('<div class="image_preview" id="upper_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>');
+    let down_elem = $('<div class="image_preview" id="down_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>');
 
+    $(".delete_btn").click(function () {
+        $("#image_image_cache").remove();
+        $("form")[0].reset();
+        $("#upper_image").remove();
+        $("#down_image").remove();
+        $(".upper_image_new").append(upper_elem);
+        $(".down_image_new").append(down_elem);
+    });
+    let upper_img = document.getElementsByTagName("img").upper_image;
+    let down_img = document.getElementsByTagName("img").down_image;
 });
