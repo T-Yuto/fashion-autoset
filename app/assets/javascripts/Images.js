@@ -16,7 +16,6 @@ $(function () {
     );
     menuListHide("ul.dropdown_btn");
 
-
     //form_preview
     $(".upper_image_new").change(function (upper) {
 
@@ -82,7 +81,4 @@ $(function () {
         $(".upper_image_new").append(upper_elem);
         $(".down_image_new").append(down_elem);
     });
-
-    let upper_img = document.getElementsByTagName("img").upper_image;
-    let down_img = document.getElementsByTagName("img").down_image;
 });

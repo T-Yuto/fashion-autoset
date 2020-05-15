@@ -1,4 +1,5 @@
 <%= form.hidden_field :image_cache %>
+
 <div class="image_new upper_image_new">
   <div class="btns">
     <label class: image_box upper_image_box>
@@ -6,12 +7,11 @@
       <%= form.file_field :upper_image, {class: "select_imagefile", id: "select_upper_image"}%>
     </label>
   </div>
-    <% if @image.upper_image.present? %>
-      <%= image_tag(@image.upper_image_url, id: "upper_image") %>
-    <% else %>
-      <div class="image_preview" id="upper_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>
-    <% end %>
-  
+  <% if @image.upper_image.present? %>
+    <%= image_tag(@image.upper_image_url, id: "upper_image") %>
+  <% else %>
+    <div class="image_preview" id="upper_image">左のボタンを押して<br>ファイルを選択<br>してください<br></div>
+  <% end %>
 </div>
 
 <div class="image_new down_image_new">
