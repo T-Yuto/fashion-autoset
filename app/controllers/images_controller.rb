@@ -52,8 +52,9 @@ class ImagesController < ApplicationController
         @related_upper_image = @upper_images.where("id>=?", rand(@upper_images.first.id..@upper_images.last.id)).first
         @related_down_image = @down_images.where("id>=?", rand(@down_images.first.id..@down_images.last.id)).first
       end
+    else
+      move_to_new
     end
-    move_to_new
   end
 
   def image_present
