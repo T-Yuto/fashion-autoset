@@ -6,9 +6,11 @@
     <% @upper_images.each do |upper_image|%>
       <li class="user_image user_upper_image">
         <%= image_tag(upper_image.upper_image_url, width: 100) %>
+        <label>
         <div class="image_btn">
-          <%= link_to '詳細', edit_image_path(upper_image.id) %>
+          <%= link_to '編集', edit_image_path(upper_image.id) %>
         </div>
+        </label>
       </li>
     <%end%>
   </ul>

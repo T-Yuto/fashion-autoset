@@ -34,6 +34,11 @@ body{
                             background-color: aqua;
                         }
                     }
+                    .log-out{
+                        &:hover{
+                            color: red;
+                        }
+                    }
                 }
             }
         }
@@ -54,7 +59,6 @@ body{
                     cursor: pointer;
                 }
                 .menulist{
-                    
                     .menu{
                         background-color: skyblue;
                         border:   1px solid white;
@@ -67,6 +71,7 @@ body{
                         &:hover{
                             background-color: rgb(93, 232, 241);
                             cursor: pointer;
+                            color:rgb(228, 165, 141);
                         }
                         a{
                             text-decoration:none;
@@ -191,6 +196,7 @@ body{
         width:    90%;
         h2{
             background-color: skyblue;
+            border-radius:20px;
             text-align: center;
             line-height:  40px;
             font-size: 30px;
@@ -215,13 +221,20 @@ body{
                     height: 100px;
                 }
                 .image_btn{
+                    background-color: lightseagreen;
+                    border-radius: 10px;
                     margin: 0 auto;
                     display:  flex;
                     width:    35px;
                     a{
                         text-decoration: none;
+                        margin:auto;
                         text-align: center;
                         font-size: 10px;
+                        color:white;
+                        &:hover{
+                            color:blue;
+                        }
                     }
                 }
                    
