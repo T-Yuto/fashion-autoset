@@ -30,6 +30,7 @@ $(function () {
 
         reader.onload = (function (file) {
             return function (upper) {
+                $("#image_image_cache").remove();
                 $("#upper_image").remove();
                 $(".upper_image_new").append($("<img>").attr({
                     src: upper.target.result,
@@ -55,6 +56,7 @@ $(function () {
 
         reader.onload = (function (file) {
             return function (down) {
+                $("#image_image_cache").remove();
                 $("#down_image").remove();
                 $(".down_image_new").append($("<img>").attr({
                     src: down.target.result,
@@ -74,12 +76,13 @@ $(function () {
 
     $(".delete_btn").click(function () {
         $("#image_image_cache").remove();
-        $("form")[0].reset();
+        $("input[type=file]").val("");
         $("#upper_image").remove();
         $("#down_image").remove();
         $(".upper_image_new").append(upper_elem);
         $(".down_image_new").append(down_elem);
     });
+
     let upper_img = document.getElementsByTagName("img").upper_image;
     let down_img = document.getElementsByTagName("img").down_image;
 });

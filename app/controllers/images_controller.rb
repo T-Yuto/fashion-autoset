@@ -10,12 +10,7 @@ class ImagesController < ApplicationController
   end
 
   def create
-    if params[:image].present?
-      Image.create(image_params)
-      move_to_new
-    else
-      move_to_new
-    end
+    image_present
   end
 
   def edit
@@ -44,6 +39,10 @@ class ImagesController < ApplicationController
     params.require(:image).permit(:upper_image, :down_image).merge(user_id: current_user.id)
   end
 
+  def move_to_new
+    redirect_to new_image_path
+  end
+
   def search_user_images
     @images = Image.where(user_id: current_user.id).includes(:user)
     if @images.present?
@@ -52,15 +51,17 @@ class ImagesController < ApplicationController
       if @upper_images.present? && @down_images.present?
         @related_upper_image = @upper_images.where("id>=?", rand(@upper_images.first.id..@upper_images.last.id)).first
         @related_down_image = @down_images.where("id>=?", rand(@down_images.first.id..@down_images.last.id)).first
-      else
-        move_to_new
       end
-    else
-      move_to_new
     end
+    move_to_new
   end
 
-  def move_to_new
-    redirect_to new_image_path
+  def image_present
+    if params[:image].present?
+      if image_params[:upper_image].present? or image_params[:down_image].present?
+        Image.create(image_params)
+      end
+    end
+    move_to_new
   end
 end
