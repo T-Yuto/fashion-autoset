@@ -22,26 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, index:true|
-|email|string|null: false|
-|password|string|null: false|
-## Asociation
-- has_many :upper-images
-- has_many :down-images
-## upper-imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|text||
-|user_id|references|null: false, foreign_key: true|
-## Asociation
-- belongs_to :user
-## down-imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|text||
-|user_id|references|null: false, foreign_key: true|
-## Asociation
-- belongs_to :user
