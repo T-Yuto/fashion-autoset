@@ -46,13 +46,14 @@ class ImagesController < ApplicationController
   def search_user_images
     @images = Image.where(user_id: current_user.id).includes(:user)
     if @images.present?
-      @user_images= @images.select("id", "upper_image", "down_image", "user_id")
+      @user_images = @images.select("id", "upper_image", "down_image", "user_id")
       @upper_images = @user_images.where.not(upper_image: nil)
       @down_images = @user_images.where.not(down_image: nil)
       if @upper_images.present? && @down_images.present?
         @related_upper_image = @upper_images.shuffle.first
         @related_down_image = @down_images.shuffle.first
       end
+      move_to_new
     else
       move_to_new
     end
