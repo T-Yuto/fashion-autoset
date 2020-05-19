@@ -52,8 +52,9 @@ class ImagesController < ApplicationController
       if @upper_images.present? && @down_images.present?
         @related_upper_image = @upper_images.shuffle.first
         @related_down_image = @down_images.shuffle.first
+      else
+        move_to_new
       end
-      move_to_new
     else
       move_to_new
     end
