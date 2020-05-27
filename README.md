@@ -31,10 +31,7 @@ Things you may want to cover:
 | email    | string | null: false             |
 | password | string | null: false             |
 
-## Asociation
-
-- has_many :upper-images
-- has_many :down-images
+- has_many :images
 
 ## images テーブル
 
