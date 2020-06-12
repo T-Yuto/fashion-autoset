@@ -1,27 +1,9 @@
 # README
+- Ruby version 2.5.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Rails version 5.2.4
 
-Things you may want to cover:
-
-- Ruby version
-
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+- Database  mysql2
 
 ## users テーブル
 
@@ -44,3 +26,18 @@ Things you may want to cover:
 ## Asociation
 
 - belongs_to :user
+
+## このアプリの使い方
+初めにユーザー登録を行います。
+
+# 画像登録機能
+ページ右上部の登録ボタンから登録ページへ
+上下の画像を選択
+登録する
+
+# 画像のランダム表示
+TOP画面で登録された画像がランダムに一枚表示
+
+# 編集機能
+ページ右上部のタブからマイページへ
+画像の編集ボタンから編集ページへ
