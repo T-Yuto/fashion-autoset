@@ -29,7 +29,7 @@
 
 ## このアプリの使い方
 初めにユーザー登録を行います。
-![alt text](https://raw.githubusercontent.com/T-Yuto/fashion-autoset/Readme/storage/Readme用/to/user new 1.png)
+![ユーザー新規登録](https://raw.githubusercontent.com/T-Yuto/fashion-autoset/Readme/storage/Readme用/user new 1.png)
 # 画像登録機能
 ページ右上部の登録ボタンから登録ページへ
 上下の画像を選択
