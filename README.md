@@ -29,15 +29,15 @@
 
 ## このアプリの使い方
 初めにユーザー登録を行います。
-![ユーザー新規登録](https://raw.githubusercontent.com/T-Yuto/fashion-autoset/Readme/storage/Readme用/user_new_1.png)
-# 画像登録機能
+![ユーザー新規登録](https://raw.githubusercontent.com/T-Yuto/fashion-autoset/README/user_new_1.png)
+### 画像登録機能
 ページ右上部の登録ボタンから登録ページへ
 上下の画像を選択
 登録する
 
-# 画像のランダム表示
+### 画像のランダム表示
 TOP画面で登録された画像がランダムに一枚表示
 
-# 編集機能
+### 編集機能
 ページ右上部のタブからマイページへ
 画像の編集ボタンから編集ページへ
