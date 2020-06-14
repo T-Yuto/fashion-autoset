@@ -3,7 +3,9 @@
 
 - Rails version 5.2.4
 
-- Database  mysql2
+- Server heroku
+
+- Database AWS S3
 
 ## users テーブル
 
