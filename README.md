@@ -1,5 +1,14 @@
 # README
 
+- Link 
+- https://sheltered-bayou-67443.herokuapp.com/
+
+- テストユーザー等
+- email: yt_test_address@yahoo.co.jp
+- password: qwerqwer
+
+## 開発環境
+
 - Ruby version 2.5.1
 
 - Rails version 5.2.4
